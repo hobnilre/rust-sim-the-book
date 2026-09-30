@@ -1,0 +1,9 @@
+chapters/01-make-the-kernel-explicit.md
+chapters/02-the-sim-kernel.md
+chapters/03-libraries-and-the-loader.md
+chapters/04-expressions-and-codecs.md
+chapters/05-evaluation-and-execution.md
+chapters/06-state-identity-and-persistence.md
+chapters/07-effects-capabilities-and-hosts.md
+chapters/08-inspection-and-tooling.md
+chapters/09-building-applications-from-modules.md

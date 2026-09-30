@@ -1,0 +1,41 @@
+% Book-specific formatting; manuscript content remains in Markdown.
+\newcommand{\articlerunningtitle}{SIM: The Book}
+\usepackage{needspace}
+\usepackage{fvextra}
+\fvset{breaklines=true,breakanywhere=true,fontsize=\small,breakindent=3em,breaksymbolleft={}}
+
+% Render the publication metadata on the title page without a footnote marker.
+\makeatletter
+\newcommand{\bookpublicationdetails}{}
+\renewcommand{\thanks}[1]{\gdef\bookpublicationdetails{#1}}
+\renewcommand{\maketitle}{%
+  \begin{titlepage}
+    \centering
+    \vspace*{0.7in}
+    {\Huge\bfseries\@title\par}
+    \vspace{0.6in}
+    {\large\@author\par}
+    \vspace{0.3in}
+    {\normalsize\@date\par}
+    \vfill
+    {\raggedright\scriptsize\bookpublicationdetails\par}
+  \end{titlepage}%
+}
+\makeatother
+
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}
+  {\normalfont\large\chaptertitlename\ \thechapter}{16pt}{}
+\titlespacing*{\chapter}{0pt}{32pt}{28pt}
+
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter\quad #1}{}}
+\fancyhf{}
+\fancyhead[LE,RO]{\small\thepage}
+\fancyhead[RE]{\small\itshape\articlerunningtitle}
+\fancyhead[LO]{\small\itshape\nouppercase{\leftmark}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\numberwithin{equation}{chapter}
+\numberwithin{theorem}{chapter}
+\numberwithin{lemma}{chapter}
+\numberwithin{corollary}{chapter}

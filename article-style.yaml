@@ -1,0 +1,26 @@
+documentclass: book
+classoption:
+  - 11pt
+  - twoside
+  - openany
+geometry:
+  - paperwidth=6in
+  - paperheight=9in
+  - inner=0.8in
+  - outer=0.7in
+  - top=0.8in
+  - bottom=0.8in
+  - headheight=14pt
+mainfont: "TeX Gyre Termes"
+sansfont: "TeX Gyre Heros"
+monofont: "TeX Gyre Cursor"
+mathfont: "TeX Gyre Termes Math"
+numbersections: true
+toc-title: Contents
+secnumdepth: 3
+indent: true
+linestretch: 1.05
+colorlinks: true
+linkcolor: MidnightBlue
+urlcolor: MidnightBlue
+citecolor: MidnightBlue
