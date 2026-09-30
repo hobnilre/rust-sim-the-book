@@ -1,4 +1,6 @@
 ARTICLE := rust-sim-the-book.md
+# First-version date. Keep fixed across revisions; only PDF created advances.
+ARTICLE_DATE := 2026-09-30
 CHAPTER_MANIFEST := chapters.txt
 CHAPTERS := $(shell cat $(CHAPTER_MANIFEST))
 PDF := rust-sim-the-book.pdf
@@ -20,6 +22,7 @@ $(PDF): $(ARTICLE) $(CHAPTER_MANIFEST) $(CHAPTERS) $(PREAMBLE) $(LOCAL_PREAMBLE)
 	mkdir -p "$(BUILD_ABS)"
 	printf '\\newcommand{\\pdfbuildtimestamp}{%s}\n' "$$(date -u '+%Y-%m-%d %H:%M:%S UTC')" > "$(BUILD_ABS)/pdf-build-time.tex"
 	TMPDIR="$(BUILD_ABS)" pandoc "$(ARTICLE)" $(CHAPTERS) --from markdown+tex_math_dollars \
+		--metadata date="$(ARTICLE_DATE)" \
 		--top-level-division=chapter --table-of-contents --toc-depth=1 \
 		--metadata-file="$(STYLE)" --pdf-engine=xelatex --include-in-header="$(PREAMBLE)" \
 		--include-in-header="$(LOCAL_PREAMBLE)" \

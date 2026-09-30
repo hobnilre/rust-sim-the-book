@@ -42,3 +42,7 @@ configured in `article-style.yaml` and `preamble-local.tex`.
 
 The repository is
 [github.com/hobnilre/rust-sim-the-book](https://github.com/hobnilre/rust-sim-the-book).
+
+The title date records the first version. Keep `ARTICLE_DATE` in the Makefile
+and the manuscript's `date` fixed across revisions. The separate `PDF created`
+timestamp continues to record each PDF rebuild in UTC.
