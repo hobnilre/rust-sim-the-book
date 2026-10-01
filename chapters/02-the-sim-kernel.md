@@ -222,7 +222,7 @@ The effect declaration can identify sampling, and the capability requirement
 can demand permission to use the sensor. These statements give callers and
 tools something concrete to inspect before they know the implementation.
 
-\Needspace{12\baselineskip}
+\Needspace{16\baselineskip}
 
 ### The small algorithm that matters
 
@@ -287,6 +287,13 @@ effects against the specification's effect list. Those fields remain valuable
 contracts for implementations, tools and other checking layers. They must not
 be presented as universal guarantees established by this dispatcher.
 
+The result of an operation is also explicit. The kernel can represent a completed
+value, a batch of events, or a suspended step carrying an effect. Defining those
+outcomes gives callers a shared vocabulary; arranging event consumption and
+resumption still requires the surrounding runtime. A sensor operation that can
+suspend needs a consumer that understands that outcome. Merely having a common
+return type does not make every caller capable of handling every effect.
+
 \Needspace{14\baselineskip}
 
 | Specification field | Role at the checked operation boundary |
@@ -298,13 +305,6 @@ be presented as universal guarantees established by this dispatcher.
 | Declared effects | Describes possible effects; this entry point does not audit the complete execution. |
 
 : What the operation specification means in the inspected implementation. Different higher-level paths may impose additional checks.
-
-The result of an operation is also explicit. The kernel can represent a completed
-value, a batch of events, or a suspended step carrying an effect. Defining those
-outcomes gives callers a shared vocabulary; arranging event consumption and
-resumption still requires the surrounding runtime. A sensor operation that can
-suspend needs a consumer that understands that outcome. Merely having a common
-return type does not make every caller capable of handling every effect.
 
 ### The host retains the power to grant
 
@@ -545,6 +545,8 @@ have a coherent place to land. The SIM kernel gives an expanding runtime a share
 language for *what a component can be asked to do, under which conditions, and
 how that participation can be inspected*. Its value is that new behavior can
 join a system that already knows how to ask those questions.
+
+\Needspace{20\baselineskip}
 
 ## References {#ch02-references .unnumbered}
 

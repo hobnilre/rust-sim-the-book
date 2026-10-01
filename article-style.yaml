@@ -11,15 +11,15 @@ geometry:
   - top=0.8in
   - bottom=0.8in
   - headheight=14pt
-mainfont: "TeX Gyre Termes"
+mainfont: "TeX Gyre Pagella"
 sansfont: "TeX Gyre Heros"
 monofont: "TeX Gyre Cursor"
-mathfont: "TeX Gyre Termes Math"
+mathfont: "TeX Gyre Pagella Math"
 numbersections: true
 toc-title: Contents
 secnumdepth: 3
 indent: true
-linestretch: 1.05
+linestretch: 1.06
 colorlinks: true
 linkcolor: MidnightBlue
 urlcolor: MidnightBlue
