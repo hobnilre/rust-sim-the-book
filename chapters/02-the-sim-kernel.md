@@ -208,6 +208,8 @@ live object, its description and its saved state to pretend to be the same
 thing. A caller can choose the identity needed for the task and state which
 resolver or reconstruction mechanism will be required later.
 
+The written request, the live object and its stored description answer different questions. Choosing a representation does not automatically supply the behavior or reconstruction needed by another one.
+
 ## A checked call has a visible boundary
 
 An operation has a key consisting of a namespace, a name and a version. Its
@@ -306,6 +308,8 @@ return type does not make every caller capable of handling every effect.
 
 : What the operation specification means in the inspected implementation. Different higher-level paths may impose additional checks.
 
+A declared contract describes what an implementation promises. The guarantees of a particular call depend on the checks that its calling path actually performs.
+
 ### The host retains the power to grant
 
 Capabilities are carried in an evaluation context. In a normal build, the
@@ -385,6 +389,8 @@ capabilities. They provide a place for local or remote implementations to meet;
 they do not, by themselves, implement a distributed scheduler or make a
 process-local handle remotely usable. Detailed execution and transport behavior
 belongs in later chapters.
+
+For the illustrative sensor task, passing the captured batch onward makes the intended observation explicit. Passing a delayed sampling request instead requires a decision about repetition, caching and retry.
 
 ## A system that can describe what is present
 
